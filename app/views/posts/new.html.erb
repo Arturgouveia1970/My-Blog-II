@@ -1,7 +1,7 @@
 <form class='container'>
   <h2>Create a Post </h2>
   <div class="form-group">
-    <%= form_with model: Post, url: user_posts_path, method: :post do |form| %>
+    <%= form_with model: Post, url: user_posts_path, data:{ turbo: false },local: true  do |form| %>
       <div class="col-xs-12"> 
         <p><%= form.text_field :title, placeholder: 'title ...', class:"form-control" %></p>
       </div>

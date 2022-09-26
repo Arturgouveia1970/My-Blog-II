@@ -1,11 +1,11 @@
 <section class="d-flex flex-column p-2">
   <%= render partial: 'shared/user/user', locals: {user: @user} %>
-  <% @posts.each do |post| %>
+  <% Post.all.each do |post| %>
     <div class="p-2">
       <%= render partial: 'shared/post/post', locals: {post: post} %>  
       <div class="border p-2 m-1">
         <% if post.comments.count > 0 %>
-          <% post.most_recent_comments.each do |comment| %>
+          <% Post.all.each do |comment| %>
             <div class="d-flex flex-row">
               <p class="p-0"><%= comment.user.name %>:</p>
               <p><%= comment.text %></p>

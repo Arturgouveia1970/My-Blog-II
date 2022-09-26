@@ -7,6 +7,9 @@
 
     <div class="p-1">
       <p><%= @post.text %>
+      <% if can? :destroy, @post %>
+        <%= button_to "Remove Post", user_post_path(@post.user, @post), method: :delete, class: "large-button" %>
+      <% end%>
     </div>
   </div>
 

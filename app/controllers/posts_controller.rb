@@ -2,8 +2,9 @@ class PostsController < ApplicationController
   # load_and_authorize_resource
 
   def index
+    
     @user = User.find(params[:user_id])
-    @posts = @user.posts.includes(:comments, :likes)
+    @post = @user.posts.includes(:comments, :likes).order(created_at: :desc).limit(5)
   end
 
   def show
@@ -16,18 +17,18 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
-    @post.user = current_user
+    @post = current_user.posts.new(post_params)
     @post.likes_counter = 0
     @post.comments_counter = 0
+    @post.update_users_posts_counter
 
     respond_to do |format|
       format.html do
         if @post.save
-          flash[:success] = 'Post saved successfully'
-          redirect_to user_post_path(current_user)
+          flash[:success] = 'Post saved successfully!'
+          redirect_to new_user_post_path(current_user)
         else
-          flash.now[:error] = 'Error: Post could not be saved'
+          flash.now[:error] = 'Error: Post can not be saved. Please try again.'
           render :new
         end
       end
@@ -50,6 +51,8 @@ class PostsController < ApplicationController
       end
     end
   end
+
+  private
 
   def post_params
     params.require(:post).permit(:title, :text)

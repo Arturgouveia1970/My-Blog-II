@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   devise_scope :user do
@@ -8,7 +10,7 @@ Rails.application.routes.draw do
   root "users#index"
 
   resources :users, only: %i[index show] do
-    resources :posts, only: %i[index new create show destroy] do
+    resources :posts do
     end
   end
 
