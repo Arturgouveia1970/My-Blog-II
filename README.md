@@ -30,7 +30,7 @@ To get a local copy up and running follow these simple example steps.
 - Write `https://github.com/Arturgouveia1970/My-Blog-II`.
 - Go to the repository folder in your command prompt `cd My-Blog-II`.
 
-Run the following commands to run the app
+Run the following commands to run the app:
 
 - `bundle install`
 - `rails db:create`
