@@ -1,13 +1,17 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="post_form_element">
-      <%= f.email_field :email, class:"input_from", placeholder: "Email", autofocus: true %>
-      <%= f.password_field :password, class:"input_from", placeholder: "Password" %>
-      <%= f.submit "Log in", class:"btn_submit_from" %>
-      <br />
+<div class="form p-3">
+  <h2>Log in</h2>
+  <%= form_for(resource, as: resource_name, url: new_user_session_path(resource_name)) do |f| %>
+    <div class="form-outline mb-4">
+        <%= f.email_field :email, class:"input_from", placeholder: "Email", autofocus: true, class:"form-control" %>
+    </div>  
+    <div class="form-ouline mb-4">  
+        <%= f.password_field :password, class:"input_from", placeholder: "Password", class:"form-control" %>
+    </div>    
+        <%= f.submit "Log in", class:"btn btn-primary btn-block mb-4" %>
+        <br />
+    </div>
+  <% end %>
+  <div class="form-check d-flex col">
+    <%= render "devise/shared/links" %>
   </div>
-<% end %>
-<div class="other_links">
-<%= render "devise/shared/links" %>
 </div>
