@@ -1,0 +1,24 @@
+<div class="d-flex flex-column p-2">
+  <div class="d-flex flex-column border p-2">
+    <div class="d-flex p-2 justify-content-between">
+      <p class=""><%= @post.title %> by: <%= @post.user.name %></p>
+      <p class="">Comments: <%= @post.comments.count %>, Likes: <%= @post.likes.count %></p>
+    </div>
+
+    <div class="p-1">
+      <p><%= @post.text %>
+      <% if can? :destroy, @post %>
+        <%= button_to "Remove Post", user_post_path(@post.user, @post), method: :delete, class: "large-button" %>
+      <% end%>
+    </div>
+  </div>
+
+  <div class="border p-2">
+    <% if @post.comments.length > 0 %>
+      <% @post.comments.each do |comment| %>
+        <p><%= comment.user.name %> : <%= comment.text%></p>
+      <% end %>
+    <% else %>
+      <p>There are no comments <em>yet!</em></p>
+    <% end %>
+  </div>    

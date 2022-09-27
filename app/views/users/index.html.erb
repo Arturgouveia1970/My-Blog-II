@@ -1,0 +1,6 @@
+<div class="mx-auto" style="width: 70%;">
+  <% @users.each do |user| %>
+    <%= render partial: "shared/user/user", locals: {user: user} %>
+  <% end %>
+</div>
+      

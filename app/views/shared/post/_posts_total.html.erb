@@ -1,0 +1,7 @@
+<div class='mx-auto d-flex flex-column border m-1 container-fluid'>
+  <h4 class=''><%= link_to(post.title, user_post_path(@user, post), class: "") %></h4>
+  <p class='row p-2'>
+    <%= post.text %>
+  </p>
+  <p class='align-self-end'>Comments: <span><%= post.comments.count %></span>, Likes: <span><%= post.likes.count %></span></p>
+</div>

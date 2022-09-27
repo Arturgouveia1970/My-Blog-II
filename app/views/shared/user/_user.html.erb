@@ -1,0 +1,12 @@
+<div class="d-flex mb-2 p-2">
+      <div class="border"><%= image_tag("Tom.png", width: 100) %></div>
+        <div class="flex-grow-1 ms-2 d-flex flex-column px-5 py-3 border">
+          <h3 class="align-self-start mt-50"><%= link_to user.name, "/user/#{user.id}/post/" %></h3>
+          <span class="align-self-end">Number of posts: <% if user.post_counter.to_i > 0 %>
+            <%= user.post_counter %>
+            <% else %>
+            <% 0 %>
+            <% end %>
+          </span>
+        </div>
+    </div>
