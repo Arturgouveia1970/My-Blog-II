@@ -74,11 +74,14 @@ group :test do
   gem 'webdrivers'
 end
 
+gem 'active_model_serializers', '~> 0.10.13'
 gem 'cancancan', '~> 3.4'
 gem 'devise'
 gem 'devise-jwt'
 gem 'jwt'
 gem 'rack-cors'
+gem 'rails-controller-testing'
+gem 'rswag'
 gem 'rswag-api'
 gem 'rswag-ui'
 gem 'rubocop', '>= 1.0', '< 2.0'
