@@ -50,8 +50,8 @@ In your browser, go to
 
 👤 **Artur Gouveia**
 
-[GitHub](https://github.com/Arturgouveia1970)
-[Twitter](https://twitter.com/@arturgouveia10)
+[GitHub](https://github.com/Arturgouveia1970) |
+[Twitter](https://twitter.com/@arturgouveia10) |
 [LinkedIn](https://www.linkedin.com/in/artur-gouveia-323868197/)
 
 
